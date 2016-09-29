@@ -2,11 +2,13 @@
 //rien si b est vide
 #include <stdlib.h>
 #include "interpreter.h"
+#include "instruction.h"
 
-void push(t_pile **to_pile, t_pile **from_pile)
+void push(t_stacks *stacks, int pile_nb)
 {	
-	t_pile *p_to = *to_pile;
-	t_pile *p_from = *from_pile;
+	(void)pile_nb;
+	t_pile *p_to = stacks->stack[PILE_A];
+	t_pile *p_from = stacks->stack[PILE_B];
 	if (p_from->first_element)	{
 		t_element *to_move = p_from->first_element;
 		to_move->next->previous = NULL;

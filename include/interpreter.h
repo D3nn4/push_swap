@@ -2,6 +2,11 @@
 #define __INTERPRETER_H__
 #define NB_MIN 0
 #define NB_MAX 9
+#define NB_PILE 2
+
+
+
+
 typedef struct 	s_element
 {
 	int current_int;
@@ -16,6 +21,11 @@ typedef struct 	s_pile
 	int total_int;
 } 				t_pile;
 
+typedef struct 	s_stacks
+{
+	t_pile *stack[NB_PILE];
+}				t_stacks;
+
 void checker(int ac, char **av);
 void addElement(int nb, t_pile *pile);
 void printPile (t_pile *pile);
@@ -24,5 +34,7 @@ void freeElem(t_element **element);
 
 t_pile *createPile(int ac, char **av);
 t_pile *getListInt(int ac, char **av, t_pile *pile);
+
+t_stacks *createStacks(t_pile *pile_a, t_pile *pile_b);
 
 #endif  //__INTERPRETER_H__

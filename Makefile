@@ -1,10 +1,15 @@
 NAME = checker
 
 SRC = src/main.c \
-	  src/instruction/swap.c src/instruction/push.c \
-	  src/instruction/rotate.c src/instruction/reverse_rotate.c \
-	  src/interpreter/checker.c src/interpreter/get_pile.c \
-	  src/interpreter/free.c
+	  src/instruction/swap.c \
+	  src/instruction/push.c \
+	  src/instruction/rotate.c \
+	  src/instruction/reverse_rotate.c \
+	  src/instruction/tab_function.c \
+	  src/interpreter/checker.c \
+	  src/interpreter/get_pile.c \
+	  src/interpreter/free.c \
+	  src/interpreter/stacks.c 
 
 HEADER = include
 

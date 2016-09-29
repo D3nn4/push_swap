@@ -2,10 +2,11 @@
 //Le premier élément devient le dernier.
 #include <stdlib.h> 
 #include "interpreter.h"
+#include "instruction.h"
 
-void rotate(t_pile **pile_to_rotate)
+void rotate(t_stacks *stacks, int pile_nb)
 {
-	t_pile *pile = *pile_to_rotate;
+	t_pile *pile = stacks->stack[pile_nb];
 	if (pile->first_element && pile->first_element->next){
 		t_element *new_last = pile->first_element;
 		pile->first_element = pile->first_element->next;
@@ -17,4 +18,13 @@ void rotate(t_pile **pile_to_rotate)
 		new_last->previous = current_elem;
 		new_last->next = NULL;
 	}
+	return;
+}
+
+void rotateAll(t_stacks *stacks, int pile_nb)
+{
+	(void)pile_nb;
+	rotate(stacks, PILE_A);
+	rotate(stacks, PILE_B);
+	return;
 }

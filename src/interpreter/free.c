@@ -7,6 +7,7 @@ void freeElem(t_element **element)
 	to_free->next = NULL;
 	to_free->previous = NULL;
 	free(to_free);
+	return;
 }
 
 void freePile(t_pile **pile)
@@ -20,4 +21,6 @@ void freePile(t_pile **pile)
 	}
 	to_free->first_element = NULL;
 	free(to_free);
+	return;
 }
+
