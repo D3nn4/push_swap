@@ -11,7 +11,7 @@ void applyCmd (char *buff, t_stacks *stacks)
 	for (i = 0; i < NB_FUNC; i++) {
 		if (strcmp(buff, tab_func_g[i].cmd) == 0) {
 			tab_func_g[i].ptrFnc(stacks, tab_func_g[i].pile_nb);
-			exit(0);
+			return;
 		}
 	}
 	printf("No command %s\n", buff);

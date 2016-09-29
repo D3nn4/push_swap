@@ -33,16 +33,17 @@ void checker(int ac, char **av)
 		int ret = 0;
 		char *buff = NULL;
 		ret = getline(&buff, &size_max, stdin);
-		buff[ret] = '\0';
-		if (ret == 0){
+		buff[ret - 1] = '\0';
+		if (buff[0] == '\0'){
 			//ckeckResult(stacks); //////////TO_DO////////////////
 			status = false;
 		}
 		else 
 			applyCmd(buff, stacks);
 		free(buff);
+		displayStacks(stacks);
 	}
-	displayStacks(stacks);
+	
 	freeStacks(&stacks);
 	return;
 } 
