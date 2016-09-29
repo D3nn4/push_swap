@@ -1,6 +1,7 @@
 //rra : reverse rotate a - décale d’une position vers le bas tous les élements de
 //la pile a. Le dernier élément devient le premier.
 #include <stdlib.h> 
+#include <stdio.h>
 #include "interpreter.h"
 #include "instruction.h"
 
@@ -12,7 +13,7 @@ void reverseRotate(t_stacks *stacks, int pile_nb)
 		while(current_elem->next->next)
 			current_elem = current_elem->next;
 		t_element *to_move = current_elem->next;
-		to_move->next = pile->first_element->next;
+		to_move->next = pile->first_element;
 		current_elem->next = NULL;
 		pile->first_element = to_move;
 		to_move->previous = NULL;
