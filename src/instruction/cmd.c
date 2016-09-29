@@ -6,10 +6,11 @@
 
 void applyCmd (char *buff, t_stacks *stacks)
 {
+	extern t_func tab_func_g[];
 	int i = 0;
 	for (i = 0; i < NB_FUNC; i++) {
-		if (strcmp(buff, tab_func[i].cmd) == 0) {
-			tab_func[i].function(stacks, tab_func.pile_nb);
+		if (strcmp(buff, tab_func_g[i].cmd) == 0) {
+			tab_func_g[i].ptrFnc(stacks, tab_func_g[i].pile_nb);
 			exit(0);
 		}
 	}

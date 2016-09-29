@@ -9,7 +9,7 @@
 typedef struct 	s_func
 {
 	const char *cmd;
-	void (*function) (t_stacks*, int);
+	void (*ptrFnc) (t_stacks*, int);
 	int pile_nb;
 }				t_func;
 

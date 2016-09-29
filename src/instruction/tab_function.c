@@ -1,6 +1,6 @@
 #include "instruction.h"
 
-t_func tab_func[] = 
+t_func tab_func_g[] = 
 {
 	{"sa", &swap, PILE_A},
 	{"sb", &swap, PILE_B},
