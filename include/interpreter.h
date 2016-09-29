@@ -1,9 +1,9 @@
 #ifndef __INTERPRETER_H__
 #define __INTERPRETER_H__
-#define NB_MIN 0
-#define NB_MAX 9
 #define NB_PILE 2
 #define _SIZE_MAX_ 4096
+#define _EXIT_VALUE_ 0
+
 
 typedef struct 	s_element
 {

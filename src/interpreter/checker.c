@@ -42,7 +42,7 @@ void checker(int ac, char **av)
 			else 
 				applyCmd(buff, stacks);
 			free(buff);
-			//displayStacks(stacks);
+			// displayStacks(stacks);
 		}
 		freeStacks(&stacks);
 	}
