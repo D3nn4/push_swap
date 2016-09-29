@@ -3,9 +3,7 @@
 #define NB_MIN 0
 #define NB_MAX 9
 #define NB_PILE 2
-
-
-
+#define _SIZE_MAX_ 4096
 
 typedef struct 	s_element
 {
@@ -31,10 +29,11 @@ void addElement(int nb, t_pile *pile);
 void printPile (t_pile *pile);
 void freePile(t_pile **pile);
 void freeElem(t_element **element);
+void freeStacks(t_stacks **stacks);
 
 t_pile *createPile(int ac, char **av);
 t_pile *getListInt(int ac, char **av, t_pile *pile);
 
-t_stacks *createStacks(t_pile *pile_a, t_pile *pile_b);
+t_stacks *createStacks(int ac, char **av);
 
 #endif  //__INTERPRETER_H__

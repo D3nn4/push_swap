@@ -4,6 +4,7 @@
 
 #define PILE_A 0
 #define PILE_B 1
+#define NB_FUNC 11
 
 typedef struct 	s_func
 {
@@ -19,5 +20,6 @@ void reverseRotate(t_stacks *stacks, int pile_nb);
 void rotateAll(t_stacks *stacks, int pile_nb);
 void swapAll(t_stacks *stacks, int pile_nb);
 void reverseRotateAll(t_stacks *stacks, int pile_nb);
+void applyCmd (char *buff, t_stacks *stacks);
 
 #endif // __INSTRUCTION_H__

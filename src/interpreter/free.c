@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "interpreter.h"
+#include "instruction.h"
 
 void freeElem(t_element **element)
 {
@@ -24,3 +25,13 @@ void freePile(t_pile **pile)
 	return;
 }
 
+void freeStacks(t_stacks **stacks_to_remove)
+{
+	t_stacks *stacks = *stacks_to_remove;
+	t_pile *pile_a = stacks->stack[PILE_A];
+	t_pile *pile_b = stacks->stack[PILE_B];
+	freePile(&pile_a);
+	freePile(&pile_b);
+	free(stacks);
+	return;
+}
