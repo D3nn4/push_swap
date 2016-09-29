@@ -14,6 +14,6 @@ void applyCmd (char *buff, t_stacks *stacks)
 			return;
 		}
 	}
-	printf("No command %s\n", buff);
+	dprintf(2, "ERROR\n");
 	return;
 }

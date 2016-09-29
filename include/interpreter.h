@@ -26,10 +26,12 @@ typedef struct 	s_stacks
 
 void checker(int ac, char **av);
 void addElement(int nb, t_pile *pile);
+void checkResult (t_stacks *stacks);
 void printPile (t_pile *pile);
 void freePile(t_pile **pile);
 void freeElem(t_element **element);
 void freeStacks(t_stacks **stacks);
+
 
 t_pile *createPile(int ac, char **av);
 t_pile *getListInt(int ac, char **av, t_pile *pile);

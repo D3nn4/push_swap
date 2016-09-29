@@ -7,7 +7,7 @@
 void swap(t_stacks *stacks, int pile_nb)
 {
 	t_pile *pile = stacks->stack[pile_nb];
-	if (pile->first_element && pile->first_element->next){
+	if (pile->first_element && pile->first_element->next) {
 		t_element *to_swap = pile->first_element;
 		to_swap->previous = to_swap->next;
 		pile->first_element = pile->first_element->next;

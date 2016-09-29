@@ -10,7 +10,8 @@ SRC = 	src/main.c \
 	  	src/interpreter/checker.c \
 	  	src/interpreter/get_pile.c \
 	 	src/interpreter/free.c \
-	  	src/interpreter/stacks.c 
+	  	src/interpreter/stacks.c \
+	  	src/interpreter/checkResult.c
 
 HEADER = include
 

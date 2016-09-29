@@ -8,7 +8,7 @@
 void reverseRotate(t_stacks *stacks, int pile_nb)
 {
 	t_pile *pile = stacks->stack[pile_nb];
-	if (pile->first_element && pile->first_element->next){
+	if (pile->first_element && pile->first_element->next) {
 		t_element *current_elem = pile->first_element;
 		while(current_elem->next->next)
 			current_elem = current_elem->next;
