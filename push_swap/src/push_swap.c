@@ -9,9 +9,7 @@ void push_swap(int ac, char **av)
 	t_stacks * stacks = createStacks(ac, av);
 	t_list *list_cmd = NULL;
 	if (stacks) {
-		printPile(stacks->stack[PILE_A]);
-		printPile(stacks->stack[PILE_B]);
-		if (!checkResult(stacks))
+		if (checkSort(stacks->stack[PILE_A]) == false)
 			list_cmd = sortStacks(stacks);
 		freeStacks(&stacks);
 	}

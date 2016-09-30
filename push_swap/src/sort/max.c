@@ -7,40 +7,33 @@
 
 bool isMaxFirst(t_stacks *stacks, t_list *cmd)
 {
-	printf("isMaxFirst IN\n");
-	int int_max = getMax(stacks->stack[PILE_A]);
-	printf("/////////1/////////\n");
 	t_pile *pile = stacks->stack[PILE_A];
-	printf("/////////2/////////\n");
 	t_element *current = pile->first_element;
-	printf("/////////3/////////\n");
-	if (int_max == current->current_int){
-		printf("/////////4/////////\n");
-		applyCmd("ra", stacks);
-		printf("/////////5/////////\n");
-		addCmd("ra", cmd);
-		printf("isMaxFirst OUT\n");
-		return true;
+	if (pile->first_element && pile->first_element->next) {
+		int int_max = getMax(pile);
+		if (int_max == current->current_int){
+			applyCmd("ra", stacks);
+			addCmd("ra", cmd);
+			return true;
+		}
 	}
-	printf("isMaxFirst OUT\n");
 	return false;
 }
 
 bool isMaxSecond(t_stacks *stacks, t_list *cmd)
 {
-	//printf("isMaxSecond IN\n");
-	int int_max = getMax(stacks->stack[PILE_A]);
 	t_pile *pile = stacks->stack[PILE_A];
 	t_element *current = pile->first_element;
-	if (int_max == current->next->current_int){
-		applyCmd("sa", stacks);
-		addCmd("sa", cmd);
-		applyCmd("ra", stacks);
-		addCmd("ra", cmd);
-		//printf("isMaxSecond OUT\n");
-		return true;
+	if (pile->first_element && pile->first_element->next) {
+	int int_max = getMax(pile);
+		if (int_max == current->next->current_int){
+			applyCmd("sa", stacks);
+			addCmd("sa", cmd);
+			applyCmd("ra", stacks);
+			addCmd("ra", cmd);
+			return true;
+		}
 	}
-	//printf("isMaxSecond OUT\n");
 	return false;
 }
 
