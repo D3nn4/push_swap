@@ -8,6 +8,7 @@ SRC = 	src/main.c \
 	  	src/instruction/reverse_rotate.c \
 	  	src/instruction/cmd.c \
 	  	src/interpreter/checker.c \
+	  	src/interpreter/print.c \
 	  	src/interpreter/get_pile.c \
 	 	src/interpreter/free.c \
 	  	src/interpreter/stacks.c \
