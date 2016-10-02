@@ -24,6 +24,7 @@ all : $(NAME)
 $(NAME) : 
 	gcc -ggdb3 -Wall -Wextra $(HEADER) -c $(SRC)
 	gcc -o $(NAME)   *.o 
+	mv *.o $(OBJDIR)
 
 clean : 
 	rm -f *.o
