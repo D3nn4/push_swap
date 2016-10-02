@@ -6,6 +6,7 @@
 
 void printCmd(t_list *list_cmd)
 {
+	//printf(" in printCmd\n");
 	t_cmd *current_cmd = list_cmd->first_elem;
 	while (current_cmd) {
 		printf("%s\n", current_cmd->name);

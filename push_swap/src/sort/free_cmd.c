@@ -7,6 +7,7 @@
 void freeCmd(t_cmd **cmd)
 {
 	t_cmd *to_free = *cmd;
+	free(to_free->name);
 	to_free->next = NULL;
 	to_free->previous = NULL;
 	free(to_free);
@@ -25,4 +26,12 @@ void freeList(t_list **list_cmd)
 	to_free->first_elem = NULL;
 	free(to_free);
 	return;
+}
+
+void error_exit(t_stacks **stacks, t_list **cmd)
+{
+	dprintf(2, "ERROR");
+	freeStacks(stacks);
+	freeList(cmd);
+	exit(_EXIT_STATUS_);
 }

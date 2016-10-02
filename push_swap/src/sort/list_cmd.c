@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 #include "sort.h"
-void addCmd(char *cmd, t_list *list)
+bool addCmd(char *cmd, t_list *list)
 {
+	//printf(" in addCmd\n");
 	t_cmd *to_add = malloc(sizeof(*to_add));
-	if (to_add == NULL) {
-		dprintf(2, "ERROR");
-		exit(_EXIT_STATUS_);
-	}
+	if (to_add == NULL)
+		return false;
 	to_add->name = strdup(cmd);
 	to_add->next = NULL;
 	if (list->first_elem == NULL) {
@@ -23,17 +23,16 @@ void addCmd(char *cmd, t_list *list)
 		to_add->previous = current;
 	}
 	++list->nb_cmd;
-	return;
+	return true;
 }
 
 t_list *createListCmd()
 {
+	//printf(" in createListCmd\n");
 	t_list *list_cmd = malloc(sizeof(*list_cmd));
-	if (list_cmd == NULL) {
-		dprintf(2, "ERROR");
-		exit(_EXIT_STATUS_);
+	if (list_cmd) {
+		list_cmd->first_elem = NULL;
+		list_cmd->nb_cmd = 0;
 	}
-	list_cmd->first_elem = NULL;
-	list_cmd->nb_cmd = 0;
 	return list_cmd;
 }

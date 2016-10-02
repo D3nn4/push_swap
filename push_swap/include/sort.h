@@ -17,15 +17,17 @@ typedef struct 	s_list
 	int nb_cmd;
 }				t_list;
 
-void addCmd(char *cmd, t_list *list);
+void error_exit(t_stacks **stacks, t_list **cmd);
 void emptyPileB( t_stacks *stacks, t_list *list_cmd);
 void printCmd(t_list *list_cmd);
 void freeList(t_list **list_cmd);
 void freeCmd(t_cmd **cmd);
+void findMin(t_stacks *stacks, t_list *list_cmd);
 
 int getMax(t_pile *pile);
 int getMin(t_pile *pile);
 
+bool addCmd(char *cmd, t_list *list);
 bool ifMaxNear(t_stacks *stacks, t_list *cmd);
 bool isMaxFirst(t_stacks *stacks, t_list *cmd);
 bool isMaxSecond(t_stacks *stacks, t_list *cmd);

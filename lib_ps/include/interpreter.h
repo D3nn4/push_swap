@@ -25,10 +25,14 @@ typedef struct 	s_stacks
 	t_pile *stack[NB_PILE];
 }				t_stacks;
 
+void getListInt(int ac, char **av, t_pile *pile);
+void error_p(t_pile **pile);
+void error_s(t_stacks **stacks);
 void checker(int ac, char **av);
 void push_swap(int ac, char **av);
 void addElement(int nb, t_pile *pile);
 void printPile (t_pile *pile);
+void displayStacks(t_stacks *stacks);
 void freePile(t_pile **pile);
 void freeElem(t_element **element);
 void freeStacks(t_stacks **stacks);
@@ -37,7 +41,6 @@ bool checkResult (t_stacks *stacks);
 
 
 t_pile *createPile(int ac, char **av);
-t_pile *getListInt(int ac, char **av, t_pile *pile);
 
 t_stacks *createStacks(int ac, char **av);
 

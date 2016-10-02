@@ -6,6 +6,7 @@
 
 void push_swap(int ac, char **av)
 {
+	//printf(" in push_swap\n");
 	t_stacks * stacks = createStacks(ac, av);
 	t_list *list_cmd = NULL;
 	if (stacks) {

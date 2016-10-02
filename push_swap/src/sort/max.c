@@ -7,13 +7,15 @@
 
 bool isMaxFirst(t_stacks *stacks, t_list *cmd)
 {
+	//printf(" in isMaxFirst\n");
 	t_pile *pile = stacks->stack[PILE_A];
 	t_element *current = pile->first_element;
 	if (pile->first_element && pile->first_element->next) {
 		int int_max = getMax(pile);
 		if (int_max == current->current_int){
 			applyCmd("ra", stacks);
-			addCmd("ra", cmd);
+			if (addCmd("ra", cmd) == false)
+				error_exit(&stacks, &cmd);
 			return true;
 		}
 	}
@@ -22,15 +24,18 @@ bool isMaxFirst(t_stacks *stacks, t_list *cmd)
 
 bool isMaxSecond(t_stacks *stacks, t_list *cmd)
 {
+	//printf(" in isMaxSecond\n");
 	t_pile *pile = stacks->stack[PILE_A];
 	t_element *current = pile->first_element;
 	if (pile->first_element && pile->first_element->next) {
 	int int_max = getMax(pile);
 		if (int_max == current->next->current_int){
 			applyCmd("sa", stacks);
-			addCmd("sa", cmd);
+			if (addCmd("sa", cmd) == false)
+				error_exit(&stacks, &cmd);
 			applyCmd("ra", stacks);
-			addCmd("ra", cmd);
+			if (addCmd("ra", cmd) == false)
+				error_exit(&stacks, &cmd);
 			return true;
 		}
 	}
@@ -39,6 +44,7 @@ bool isMaxSecond(t_stacks *stacks, t_list *cmd)
 
 bool ifMaxNear(t_stacks *stacks, t_list *cmd)
 {
+	//printf(" in ifMaxNear\n");
 	if (isMaxFirst(stacks, cmd) 
 		|| isMaxSecond(stacks, cmd)) 
 		return true;

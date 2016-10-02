@@ -25,33 +25,29 @@ void addElement(int nb, t_pile *pile)
 	return;
 }
 
-t_pile *getListInt(int ac, char **av, t_pile *pile)
+void getListInt(int ac, char **av, t_pile *pile)
 {
 	int i = 0;
 	for (i = 1; i < ac; ++i) {
 		int nb = atoi(av[i]);
-		if (nb == 0 && strlen(av[i]) != 1 && av[i][0] != '0') {
-			dprintf(2, "ERROR\n");
-			exit(_EXIT_VALUE_);
-			}
+		if (nb == 0 && strlen(av[i]) != 1 && av[i][0] != '0') 
+			return;
 		addElement(nb, pile);
 		++pile->pile_lenght;
 		++pile->total_int;
 	}
-	return pile;
+	return;
 }
 
 t_pile *createPile(int ac, char **av)
 {
 	t_pile *pile = malloc(sizeof(*pile));
-	if (pile == NULL) {
-		dprintf(2, "ERROR\n");
-		exit(_EXIT_VALUE_);
+	if (pile) {
+		pile->first_element = NULL;
+		pile->pile_lenght = 0;
+		pile->total_int = 0;
+		if (av)
+			getListInt(ac,av,pile);
 	}
-	pile->first_element = NULL;
-	pile->pile_lenght = 0;
-	pile->total_int = 0;
-	if (av)
-		pile = getListInt(ac,av,pile);
 	return pile;		
 }

@@ -14,6 +14,5 @@ void applyCmd (char *buff, t_stacks *stacks)
 			return;
 		}
 	}
-	dprintf(2, "ERROR\n");
-	exit(_EXIT_VALUE_);
+	error_s(&stacks);
 }
